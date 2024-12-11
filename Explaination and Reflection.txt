@@ -1,0 +1,23 @@
+1. Conceptual Design
+- ERD.png
+
+
+2. Logical Design
+-Logical_Design.png
+
+
+3.SQL queries
+-query.sql
+
+
+4. Data Integrity and Optimization
+
+* To ensure users cannot borrow books when no copies are available, I would implement a database trigger that checks the quantity_available column in the Books table before a loan is recorded in the Book_Loans table. If the quantity is zero or less, the trigger raises an exception to prevent the transaction, ensuring books cannot be over-loaned.
+
+*To ensure quick retrieval of overdue loans, I would optimize the database by creating indexes on the Return_Date and Status columns in the Book_Loans table. These indexes improve query execution by allowing the database to quickly find relevant rows. In addition, I would use EXPLAIN ANALYZE to test the query's performance and ensure that indexes are being used effectively. This approach ensures that overdue loans are recovered quickly and efficiently.
+
+
+
+5. Reflection
+
+*There may come a time when managing the books and users becomes more challenging as the library system grows. To address this, I believe further optimizing the trigger function would be crucial to ensure better performance and accuracy in maintaining book availability. Additionally, I could implement a function to automatically delete or archive book loans once users have settled their overdue payments or returned the books. This would help keep the database clean and efficient. I also realize that continuous improvement and scalability will be essential to handle future demands effectively.

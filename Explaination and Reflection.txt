@@ -12,7 +12,7 @@
 
 4. Data Integrity and Optimization
 
-* To ensure users cannot borrow books when no copies are available, I would implement a database trigger that checks the quantity_available column in the Books table before a loan is recorded in the Book_Loans table. If the quantity is zero or less, the trigger raises an exception to prevent the transaction, ensuring books cannot be over-loaned.
+* To ensure users cannot borrow books when no copies are available, I would implement a database trigger that checks the quantity_available column in the Books table before a loan is recorded in the Book_Loans table. If the quantity is zero or less, the trigger raises an exception to prevent the transaction, ensuring books cannot be over-loaned. It can be seen in the Data Integrity.png where the books avialable was deducted.
 
 *To ensure quick retrieval of overdue loans, I would optimize the database by creating indexes on the Return_Date and Status columns in the Book_Loans table. These indexes improve query execution by allowing the database to quickly find relevant rows. In addition, I would use EXPLAIN ANALYZE to test the query's performance and ensure that indexes are being used effectively. This approach ensures that overdue loans are recovered quickly and efficiently.
 
